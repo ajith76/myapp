@@ -1,6 +1,7 @@
 import { Component,Input,Output,EventEmitter  } from '@angular/core';
 import { AnimeService } from '../anime.service';
 import { Route, Router } from '@angular/router';
+import { debounceTime, Subject, switchMap } from 'rxjs';
 import { Anime } from '../app.component';
 
 @Component({
@@ -9,34 +10,63 @@ import { Anime } from '../app.component';
   styleUrls: ['./anime.component.css']
 })
 export class AnimeComponent {
-  @Input() anime: Anime = {
-    "id": "1",
-    "title": "Your Name",
-    "rating": 8.9,
-    "poster": "https://m.media-amazon.com/images/M/MV5BMTM0MDgxNTgzOV5BMl5BanBnXkFtZTgwMDM5OTI5NjE@._V1_.jpg",
-    "summary": "Two strangers find themselves connected in a mysterious way when they start swapping bodies intermittently. They embark on a quest to uncover the truth behind this strange phenomenon.",
-    "trailer": "https://youtu.be/hRfHcp2GjVI",
-    "like": 0,
-    "dislike": 0,
-    "releaseYear": 2016,
-    "censorRating": "PG",
-    "genres": [
-      "Animation",
-      "Drama",
-      "Fantasy"
-    ],
-    "languages": [
-      "Japanese",
-      "English"
-    ]
-  };
+  @Input() anime: any;
   @Output() removeAnime = new EventEmitter();
+  likeSubject = new Subject<number>();
+  disLikeSubject = new Subject<number>();
   show = true;
-  constructor(private router: Router, private animeService:AnimeService){}
-  toggleSummary(){
+  constructor(private router: Router, private animeService: AnimeService) {
+
+    this.likeSubject
+      .pipe(
+        debounceTime(2000),
+        switchMap((count) => {
+          this.anime = { ...this.anime, like: count };
+          return this.animeService.updateAnimeById(this.anime);
+        })
+      )
+      .subscribe();
+
+    this.disLikeSubject
+      .pipe(
+        debounceTime(2000),
+        switchMap((count) => {
+          this.anime = { ...this.anime, dislike: count };
+          return this.animeService.updateAnimeById(this.anime);
+        })
+      )
+      .subscribe();
+  }
+
+  toggleSummary() {
     this.show = !this.show;
   }
-  gotoAnimeDetails(){
-    this.router.navigate([])
+
+  gotoAnimeDetail() {
+
+    this.router.navigate([`/anime`, this.anime.id]);
+  }
+
+
+  editAnime() {
+    this.router.navigate(['/anime/edit', this.anime.id]);
+  }
+
+
+  deleteAnime() {
+    this.animeService.deleteAnimeById(this.anime.id).subscribe(() => {
+      console.log('anime deleted successfully');
+      this.removeAnime.emit();
+    });
+
+  }
+
+  likeCount(count: number) {
+  
+    this.likeSubject.next(count);
+  }
+
+  disLikeCount(count: number) {
+    this.disLikeSubject.next(count);
   }
 }

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Anime } from './app.component';
 import { HttpClient } from '@angular/common/http';
+import { Title } from '@angular/platform-browser';
 
 
 @Injectable({
@@ -28,6 +29,11 @@ getAnimeListFromMockAPI(){
   deleteAnimeById(id: string) {
     return this.http.delete<Anime>(
       `https://64f6f4189d7754084952d85e.mockapi.io/anime/${id}`
+    );
+  }
+  searchAnimeList(title: string) {
+    return this.http.get<Anime[]>(
+      `https://64f6f4189d7754084952d85e.mockapi.io/anime?title=${title}`
     );
   }
 
@@ -58,3 +64,4 @@ getAnimeListFromMockAPI(){
     
   }
 }
+export { Anime } 

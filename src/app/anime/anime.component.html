@@ -1,19 +1,65 @@
 <div class="anime-container">
-  <img
-    class="anime-poster"
-    src="https://m.media-amazon.com/images/M/MV5BYTgxZjNlZWQtYjg1OS00NzY2LTkyZTctZDBkY2Y2ZWEyMjNlXkEyXkFqcGdeQXVyMzgxODM4NjM@._V1_.jpg"
-    alt=""
-  />
-  <div class="anime-details">
-    <div class="anime-spec">
-      <h2>Oshi no Kko</h2>
+  <img [src]="anime.poster" [alt]="anime.title" class="anime-poster" />
+
+  <div class="anime">
+    <div class="anime">
+      <h2 class="anime-title">
+        {{ anime.name }}
+        <button
+          (click)="toggleSummary()"
+          mat-icon-button
+          color="primary"
+          aria-label="Toggle Summary"
+        >
+          <mat-icon *ngIf="show; else moreIcon">expand_less</mat-icon>
+
+          <ng-template #moreIcon>
+            <mat-icon>expand_more</mat-icon>
+          </ng-template>
+        </button>
+
+        <button
+          (click)="gotoAnimeDetail()"
+          mat-icon-button
+          color="primary"
+          aria-label="Toggle Summary"
+        >
+          <mat-icon>info</mat-icon>
+        </button>
+      </h2>
+      <p class="movie-rating">⭐ {{ anime.rating }}</p>
     </div>
-    <p>
-      A doctor and his recently-deceased patient are reborn as twins to a famous
-      Japanese musical idol and navigate the highs and lows of the Japanese
-      entertainment industry as they grow up together through their lives.
-    </p>
-    <button>edit</button>
-    <button>delete</button>
+
+    <em>{{ anime?.releaseYear | date : "MMM YYYY" }}</em>
+
+    <p>{{ anime.cast?.join(" | ") }}</p>
+    <p>{{ anime.genres?.join(" | ") }}</p>
+    <p>{{ anime.languages?.join(" | ") }}</p>
+
+    <p *ngIf="show" class="movie-summary">{{ anime.summary }}</p>
+
+    <app-like-disklike-counter
+      [like]="anime.like"
+      [disLike]="anime.dislike"
+      (likeCount)="likeCount($event)"
+      (disLikeCount)="disLikeCount($event)"
+    ></app-like-disklike-counter>
+    <button
+      (click)="editAnime()"
+      mat-icon-button
+      color="accent"
+      aria-label="Edit Movie"
+    >
+      <mat-icon>edit</mat-icon>
+    </button>
+
+    <button
+      (click)="deleteAnime()"
+      mat-icon-button
+      color="warn"
+      aria-label="Edit Movie"
+    >
+      <mat-icon>delete</mat-icon>
+    </button>
   </div>
 </div>

@@ -7,12 +7,17 @@ import { RouterModule } from '@angular/router';
 import { AnimeComponent } from './anime/anime.component';
 import { AnimeListComponent } from './anime-list/anime-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddAnimeFormComponent } from './add-anime-form/add-anime-form.component';
+import { LikeDislikeCounterComponent } from './like-dislike-counter/like-dislike-counter.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
     AppComponent,
     AnimeComponent,
     AnimeListComponent,
+    AddAnimeFormComponent,
+    LikeDislikeCounterComponent,
 
     
   ],
@@ -20,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
