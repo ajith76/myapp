@@ -1,0 +1,7 @@
+.anime-list-container{
+    display: flex;
+    margin-top: 35px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}

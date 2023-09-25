@@ -1,10 +1,10 @@
 <div class="anime-container">
   <img [src]="anime.poster" [alt]="anime.title" class="anime-poster" />
 
-  <div class="anime">
-    <div class="anime">
+  <div class="anime-details">
+    <div class="anime-spec">
       <h2 class="anime-title">
-        {{ anime.name }}
+        {{ anime.title }}
         <button
           (click)="toggleSummary()"
           mat-icon-button
@@ -38,17 +38,18 @@
 
     <p *ngIf="show" class="movie-summary">{{ anime.summary }}</p>
 
-    <app-like-disklike-counter
+    <app-like-dislike-counter
       [like]="anime.like"
       [disLike]="anime.dislike"
       (likeCount)="likeCount($event)"
       (disLikeCount)="disLikeCount($event)"
-    ></app-like-disklike-counter>
+    ></app-like-dislike-counter>
+
     <button
       (click)="editAnime()"
       mat-icon-button
       color="accent"
-      aria-label="Edit Movie"
+      aria-label="Edit Anime"
     >
       <mat-icon>edit</mat-icon>
     </button>
@@ -57,7 +58,7 @@
       (click)="deleteAnime()"
       mat-icon-button
       color="warn"
-      aria-label="Edit Movie"
+      aria-label="Edit Anime"
     >
       <mat-icon>delete</mat-icon>
     </button>

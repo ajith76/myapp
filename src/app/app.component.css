@@ -1,0 +1,12 @@
+.anime-list-container {
+    display: grid;
+    place-content: center;
+  }
+  
+  .router-container {
+    padding: 1.5rem;
+  }
+  
+  nav button {
+    text-transform: uppercase;
+  }

@@ -1,4 +1,15 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { FormArray, Validators } from '@angular/forms';
+import { COMMA, ENTER } from '@angular/cdk/keycodes';
+import { MatChipInputEvent } from '@angular/material/chips';
+import { LANGUAGES, GENRES } from './global';
+import { FormBuilder } from '@angular/forms';
+import { Anime } from '../app.component';
+import { AnimeService } from '../anime.service';
+
+
+
 
 @Component({
   selector: 'app-add-anime-form',
@@ -6,5 +17,97 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-anime-form.component.css']
 })
 export class AddAnimeFormComponent {
+  separatorKeysCodes: number[] = [ENTER, COMMA];
 
+  languages = LANGUAGES;
+
+  genres = GENRES;
+
+  animeForm = this.fb.group({
+    like: 0,
+    dislike: 0,
+    name: ['', [Validators.required, Validators.minLength(5)]],
+    featured: [false],
+    rating: [0, [Validators.required, Validators.min(1), Validators.max(10)]],
+    releaseYear: ['', [Validators.required]],
+    censorRating: ['', [Validators.required]],
+    genres: [[], [Validators.required]],
+    languages: [[], [Validators.required]],
+
+    poster: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.pattern('^http.*'),
+      ],
+    ],
+    summary: ['', [Validators.required, Validators.minLength(20)]],
+    trailer: [
+      '',
+      [
+        Validators.required,
+        Validators.minLength(5),
+        Validators.pattern('^http.*'),
+      ],
+    ],
+  });
+  animeList;
+  constructor(
+    private animeService: AnimeService,
+    private router: Router,
+    private fb: FormBuilder
+  ) {
+    this.animeList = animeService.getAnimeList();
+  }
+
+  get title() {
+    return this.animeForm?.get('title');
+  }
+
+  get rating() {
+    return this.animeForm?.get('rating');
+  }
+
+  get poster() {
+    return this.animeForm?.get('poster');
+  }
+
+  get summary() {
+    return this.animeForm?.get('summary');
+  }
+
+  get trailer() {
+    return this.animeForm?.get('trailer');
+  }
+
+  // get cast() {
+  //   return this.animeForm.get('cast') as FormArray;
+  // }
+
+  // addCastName(event: MatChipInputEvent) {
+  //   const name = (event.value || '').trim();
+  //   if (name) {
+  //     this.cast.push(this.fb.control(name));
+  //   }
+
+  //   event.chipInput!.clear();
+  // }
+
+  // removeCastName(index: number) {
+  //   this.cast.removeAt(index);
+  // }
+
+  addMovie() {
+    console.log(this.animeForm.status);
+
+    if (this.animeForm.valid) {
+      const newAnime = this.animeForm.value;
+      console.log(newAnime);
+      this.animeService.createAnime(newAnime as Anime).subscribe(() => {
+        this.router.navigate(['/animes']);
+      });
+    }
+  }
 }
+

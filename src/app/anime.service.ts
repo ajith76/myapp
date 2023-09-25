@@ -47,7 +47,7 @@ getAnimeListFromMockAPI(){
   updateAnimeById(updatedAnime: Anime) {
     const id = updatedAnime.id;
     return this.http.put(
-      `https://60c98aa8772a760017203b57.mockapi.io/movies/${id}`,
+      `https://64f6f4189d7754084952d85e.mockapi.io/anime/${id}`,
       updatedAnime
     );
   }
@@ -64,4 +64,3 @@ getAnimeListFromMockAPI(){
     
   }
 }
-export { Anime } 

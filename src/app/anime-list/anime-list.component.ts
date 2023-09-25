@@ -29,7 +29,7 @@ export class AnimeListComponent {
   
   constructor(private animeService: AnimeService,private fb: FormBuilder){}
   
-  ngOnINit(){
+  ngOnInit(){
     this.search?.valueChanges
     .pipe(
       debounceTime(1500),
