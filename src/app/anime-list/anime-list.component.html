@@ -1,0 +1,7 @@
+<section class="anime-list-container">
+  <app-anime
+    *ngFor="let ani of animeList"
+    [anime]="ani"
+    (removeanime)="loadAnimesData()"
+  ></app-anime>
+</section>

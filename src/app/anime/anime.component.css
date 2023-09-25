@@ -1,0 +1,24 @@
+.anime-container {
+    
+    width: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+.anime-poster {
+    height: 450px;
+    object-fit: cover;
+    width: 100%;
+  }
+.anime-spec {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .anime-spec > p {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  .anime-details {
+    padding: 1rem;
+  }
