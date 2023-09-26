@@ -26,8 +26,7 @@ export class AddAnimeFormComponent {
   animeForm = this.fb.group({
     like: 0,
     dislike: 0,
-    name: ['', [Validators.required, Validators.minLength(5)]],
-    featured: [false],
+    title: ['', [Validators.required, Validators.minLength(5)]],
     rating: [0, [Validators.required, Validators.min(1), Validators.max(10)]],
     releaseYear: ['', [Validators.required]],
     censorRating: ['', [Validators.required]],
@@ -81,6 +80,10 @@ export class AddAnimeFormComponent {
     return this.animeForm?.get('trailer');
   }
 
+  get censorRating(){
+    return this.animeForm?.get('censorRating')
+  }
+
   // get cast() {
   //   return this.animeForm.get('cast') as FormArray;
   // }
@@ -98,13 +101,13 @@ export class AddAnimeFormComponent {
   //   this.cast.removeAt(index);
   // }
 
-  addMovie() {
+  addAnime() {
     console.log(this.animeForm.status);
 
     if (this.animeForm.valid) {
       const newAnime = this.animeForm.value;
       console.log(newAnime);
-      this.animeService.createAnime(newAnime as Anime).subscribe(() => {
+      this.animeService.createAnime(newAnime as unknown as Anime).subscribe(() => {
         this.router.navigate(['/animes']);
       });
     }

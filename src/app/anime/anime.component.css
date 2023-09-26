@@ -3,6 +3,8 @@
     width: 400px;
     border-radius: 16px;
     overflow: hidden;
+    background-color: #f1f2fa;
+    margin-bottom: 50px;
   }
 .anime-poster {
     height: 450px;

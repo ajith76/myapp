@@ -8,6 +8,8 @@ export const LANGUAGES = [
     { label: 'Gujarati', value: 'GU' },
     { label: 'Malayalam', value: 'ML' },
     { label: 'Tamil', value: 'TA' },
+    { label: 'Japaneese', value: 'JP' },
+
   ];
   export const GENRES = [
     { label: 'Action', value: 'ACTION' },

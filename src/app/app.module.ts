@@ -21,6 +21,14 @@ import {MatIconModule} from '@angular/material/icon';
 import { EditAnimeFormComponent } from './edit-anime-form/edit-anime-form.component';
 import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import {MatRadioModule} from '@angular/material/radio';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatListModule} from '@angular/material/list';
+import {MatSelectModule} from '@angular/material/select';
+
+
+
+
 
 
 @NgModule({
@@ -40,7 +48,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     AppRoutingModule,
     HttpClientModule,
     RouterModule,MatIconModule,MatFormFieldModule,MatButtonModule,FormsModule, ReactiveFormsModule,
-    MatInputModule,BrowserAnimationsModule,MatToolbarModule
+    MatInputModule,BrowserAnimationsModule,MatToolbarModule,MatFormFieldModule,MatRadioModule,
+    MatDatepickerModule,MatListModule,MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

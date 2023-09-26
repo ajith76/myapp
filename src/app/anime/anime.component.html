@@ -30,9 +30,9 @@
       <p class="movie-rating">⭐ {{ anime.rating }}</p>
     </div>
 
-    <em>{{ anime?.releaseYear | date : "MMM YYYY" }}</em>
+    <em>{{ anime?.releaseYear | date : "YYYY" }}</em>
 
-    <p>{{ anime.cast?.join(" | ") }}</p>
+    <!-- <p>{{ anime.cast?.join(" | ") }}</p> -->
     <p>{{ anime.genres?.join(" | ") }}</p>
     <p>{{ anime.languages?.join(" | ") }}</p>
 
