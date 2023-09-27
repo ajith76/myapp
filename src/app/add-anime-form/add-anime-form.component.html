@@ -13,13 +13,13 @@
 
   <!-- <mat-slide-toggle formControlName="featured">Featured</mat-slide-toggle> -->
 
-  <mat-form-field>
+  <!-- <mat-form-field>
     <mat-label>Choose a date</mat-label>
-    <input formControlName="releaseYear" matInput [matDatepicker]="picker" />
-    <mat-hint>YYYY</mat-hint>
+    <input matInput [matDatepicker]="picker" />
+    <mat-hint>MM/DD/YYYY</mat-hint>
     <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
+  </mat-form-field> --->
 
   <h3>Censor Rating</h3>
   <mat-radio-group
@@ -41,7 +41,7 @@
       }}</mat-option>
     </mat-select>
   </mat-form-field>
-
+  <h3>languages</h3>
   <mat-selection-list formControlName="languages">
     <mat-list-option
       *ngFor="let language of languages"
@@ -146,7 +146,7 @@
   </button>
 </form>
 
-<pre>
+<!-- <pre>
     {{ animeForm.value | json }}
-  </pre
+  </pre -->
 >

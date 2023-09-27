@@ -1,0 +1,12 @@
+.add-anime-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 20rem;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
+  
+  .mat-mdc-radio-button ~ .mat-mdc-radio-button {
+    margin-left: 16px;
+  }

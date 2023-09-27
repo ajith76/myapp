@@ -28,7 +28,7 @@ export class AddAnimeFormComponent {
     dislike: 0,
     title: ['', [Validators.required, Validators.minLength(5)]],
     rating: [0, [Validators.required, Validators.min(1), Validators.max(10)]],
-    releaseYear: ['', [Validators.required]],
+    // releaseYear: ['', [Validators.required]],
     censorRating: ['', [Validators.required]],
     genres: [[], [Validators.required]],
     languages: [[], [Validators.required]],
@@ -84,22 +84,6 @@ export class AddAnimeFormComponent {
     return this.animeForm?.get('censorRating')
   }
 
-  // get cast() {
-  //   return this.animeForm.get('cast') as FormArray;
-  // }
-
-  // addCastName(event: MatChipInputEvent) {
-  //   const name = (event.value || '').trim();
-  //   if (name) {
-  //     this.cast.push(this.fb.control(name));
-  //   }
-
-  //   event.chipInput!.clear();
-  // }
-
-  // removeCastName(index: number) {
-  //   this.cast.removeAt(index);
-  // }
 
   addAnime() {
     console.log(this.animeForm.status);

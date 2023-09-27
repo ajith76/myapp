@@ -44,12 +44,12 @@ export class AnimeComponent {
 
   gotoAnimeDetail() {
 
-    this.router.navigate([`/anime`, this.anime.id]);
+    this.router.navigate([`/animes`, this.anime.id]);
   }
 
 
   editAnime() {
-    this.router.navigate(['/anime/edit', this.anime.id]);
+    this.router.navigate(['/animes/edit/', this.anime.id]);
   }
 
 

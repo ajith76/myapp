@@ -1,8 +1,7 @@
 export const LANGUAGES = [
     { label: 'English', value: 'EN' },
-
     { label: 'Tamil', value: 'TA' },
-    { label: 'Japaneese', value: 'JP' },
+    { label: 'Japaneese', value: 'JP' }
 
   ];
   export const GENRES = [

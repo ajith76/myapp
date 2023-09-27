@@ -5,7 +5,7 @@ import { FormArray, FormBuilder, Validators } from '@angular/forms';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatFormFieldModule, MatHint } from '@angular/material/form-field';
 
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -40,7 +40,7 @@ import {MatSelectModule} from '@angular/material/select';
     LikeDislikeCounterComponent,
     EditAnimeFormComponent,
     AnimeDetailComponent,
-    HomePageComponent,
+    HomePageComponent
     
   ],
   imports: [
@@ -49,7 +49,7 @@ import {MatSelectModule} from '@angular/material/select';
     HttpClientModule,
     RouterModule,MatIconModule,MatFormFieldModule,MatButtonModule,FormsModule, ReactiveFormsModule,
     MatInputModule,BrowserAnimationsModule,MatToolbarModule,MatFormFieldModule,MatRadioModule,
-    MatDatepickerModule,MatListModule,MatSelectModule
+    MatDatepickerModule,MatListModule,MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

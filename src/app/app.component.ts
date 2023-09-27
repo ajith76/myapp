@@ -10,7 +10,7 @@ type Anime ={
   trailer:string,
   like:number,
   dislike:number,
-  releaseYear:number,
+  // releaseYear:number,
   censorRating:string,
   genres:Array<string>,
   languages:Array<string>
