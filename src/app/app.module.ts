@@ -6,7 +6,11 @@ import { FormArray, FormBuilder, Validators } from '@angular/forms';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule, MatHint } from '@angular/material/form-field';
-
+import {
+ MatChipEditedEvent ,
+  MatChipInputEvent,
+  MatChipsModule,
+} from '@angular/material/chips';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -25,6 +29,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatListModule} from '@angular/material/list';
 import {MatSelectModule} from '@angular/material/select';
+import {MatBadgeModule} from '@angular/material/badge';
 
 
 
@@ -49,7 +54,7 @@ import {MatSelectModule} from '@angular/material/select';
     HttpClientModule,
     RouterModule,MatIconModule,MatFormFieldModule,MatButtonModule,FormsModule, ReactiveFormsModule,
     MatInputModule,BrowserAnimationsModule,MatToolbarModule,MatFormFieldModule,MatRadioModule,
-    MatDatepickerModule,MatListModule,MatSelectModule,
+    MatDatepickerModule,MatListModule,MatSelectModule,MatChipsModule,MatBadgeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

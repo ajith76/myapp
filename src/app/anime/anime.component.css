@@ -5,12 +5,14 @@
     /* overflow: hidden; */
     background-color: whitesmoke;
     margin-bottom: 50px;
-    transition: transform 0.3s;
+    /* transition: transform 10s; */
   }
 .anime-poster {
     height: 450px;
     object-fit: cover;
     width: 100%;
+    transition: transform 0.4s;
+    /* border-radius: 20px; */
   }
 .anime-spec {
     display: flex;
@@ -20,8 +22,9 @@
   }
 img:hover{
   z-index: 10;
-  transform: scale(1.1);
+  transform: scale(1.05);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 15px;
 
 }
 
@@ -31,4 +34,9 @@ img:hover{
   }
   .anime-details {
     padding: 1rem;
+  }
+  .bottom-icon{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }

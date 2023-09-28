@@ -3,6 +3,8 @@ import { Subscription } from 'rxjs';
 import { AnimeService } from '../anime.service';
 import { Anime } from '../app.component';
 import { FormBuilder } from '@angular/forms';
+import { GENRES, LANGUAGES } from '../add-anime-form/global';
+
 
 import {
   debounceTime,

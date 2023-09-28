@@ -3,10 +3,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { FormArray, Validators } from '@angular/forms';
 import { COMMA, ENTER } from '@angular/cdk/keycodes';
 import { MatChipInputEvent } from '@angular/material/chips';
-import { LANGUAGES, GENRES } from './global';
+
 import { FormBuilder } from '@angular/forms';
 import { Anime } from '../app.component';
 import { AnimeService } from '../anime.service';
+import { GENRES, LANGUAGES } from '../add-anime-form/global';
+
 
 @Component({
   selector: 'app-edit-anime-form',
@@ -25,6 +27,7 @@ export class EditAnimeFormComponent {
 
 
   animeForm = this.fb.group({
+    id:'',
     like: 0,
     dislike: 0,
     title: ['', [Validators.required, Validators.minLength(5)]],
@@ -97,13 +100,15 @@ export class EditAnimeFormComponent {
   
 
  
-  addAnime() {
+  updateAnime() {
     console.log(this.animeForm.status);
 
     if (this.animeForm.valid) {
-      const newAnime = this.animeForm.value;
-      console.log(newAnime);
-      this.animeService.createAnime(newAnime as unknown as Anime).subscribe(() => {
+      const updatedAnime = this.animeForm.value;
+      console.log(updatedAnime);
+      // this.movieService.updateMovie(updatedMovie as Movie);
+
+      this.animeService.updateAnimeById(updatedAnime as unknown as Anime).subscribe(() => {
         this.router.navigate(['/animes']);
       });
     }

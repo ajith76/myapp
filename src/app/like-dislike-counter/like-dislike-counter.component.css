@@ -1,0 +1,7 @@
+.counter-container{
+    display: flex;
+gap: 12px;
+}
+button{
+    border: none;
+}

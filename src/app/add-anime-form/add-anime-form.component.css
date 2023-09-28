@@ -1,12 +1,23 @@
 .add-anime-form {
     display: flex;
     flex-direction: column;
+  transform: translateX(25rem);
     gap: 0.5rem;
     max-width: 20rem;
-    margin: 0 auto;
-    margin-bottom: 1rem;
+    /* margin: 0 auto; */
+    padding: 2.3rem;
+    /* margin-top: 10px; */
+    /* margin-bottom: 1rem; */
+    color: rgb(6, 6, 28);
   }
   
   .mat-mdc-radio-button ~ .mat-mdc-radio-button {
     margin-left: 16px;
   }
+  .background-img{
+    background-image: url("https://images3.alphacoders.com/282/282067.jpg");
+    background-size: cover;
+    width: 100%;  
+   
+  }
+ 

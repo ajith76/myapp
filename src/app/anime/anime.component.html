@@ -30,37 +30,39 @@
       <p class="movie-rating">⭐ {{ anime.rating }}</p>
     </div>
 
-    <em>{{ anime?.releaseYear | date : "YYYY" }}</em>
+    <!-- <em>{{ anime?.releaseYear | date : "YYYY" }}</em> -->
 
     <!-- <p>{{ anime.cast?.join(" | ") }}</p> -->
     <p>{{ anime.genres?.join(" | ") }}</p>
     <p>{{ anime.languages?.join(" | ") }}</p>
 
     <p *ngIf="show" class="movie-summary">{{ anime.summary }}</p>
+    <section class="bottom-icon">
+      <app-like-dislike-counter
+        [like]="anime.like"
+        [disLike]="anime.dislike"
+        (likeCount)="likeCount($event)"
+        (disLikeCount)="disLikeCount($event)"
+      ></app-like-dislike-counter>
+      <div>
+        <button
+          (click)="editAnime()"
+          mat-icon-button
+          color="accent"
+          aria-label="Edit Anime"
+        >
+          <mat-icon>edit</mat-icon>
+        </button>
 
-    <app-like-dislike-counter
-      [like]="anime.like"
-      [disLike]="anime.dislike"
-      (likeCount)="likeCount($event)"
-      (disLikeCount)="disLikeCount($event)"
-    ></app-like-dislike-counter>
-
-    <button
-      (click)="editAnime()"
-      mat-icon-button
-      color="accent"
-      aria-label="Edit Anime"
-    >
-      <mat-icon>edit</mat-icon>
-    </button>
-
-    <button
-      (click)="deleteAnime()"
-      mat-icon-button
-      color="warn"
-      aria-label="Edit Anime"
-    >
-      <mat-icon>delete</mat-icon>
-    </button>
+        <button
+          (click)="deleteAnime()"
+          mat-icon-button
+          color="warn"
+          aria-label="Edit Anime"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </section>
   </div>
 </div>

@@ -1,5 +1,14 @@
 marquee{
-    font-size: 50px;
-    text-align: center;
+    font-size:23px;
+    margin-top: 30px;
   
+}
+.welcome{
+    background-image: url("https://images3.alphacoders.com/132/1322308.jpeg");
+    height: 50rem;
+
+    width: 100%;
+    margin-top: 0;
+    background-size: cover;
+    
 }

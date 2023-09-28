@@ -1,4 +1,4 @@
-<form [formGroup]="animeForm" (ngSubmit)="addAnime()" class="add-anime-form">
+<form [formGroup]="animeForm" (ngSubmit)="updateAnime()" class="add-anime-form">
   <mat-form-field>
     <mat-label>Title</mat-label>
     <input matInput formControlName="title" placeholder="Ex. One Piece" />
@@ -110,13 +110,13 @@
     <mat-icon
       aria-hidden="false"
       aria-label="Example home icon"
-      fontIcon="add"
+      fontIcon="save"
     ></mat-icon>
-    {{ "Add Anime" | uppercase }}
+    {{ "Save" | uppercase }}
   </button>
 </form>
 
-<pre>
+<!-- <pre>
         {{ animeForm.value | json }}
       </pre
->
+> -->

@@ -56,11 +56,11 @@ getAnimeListFromMockAPI(){
     this.animeList.push(newAnime);
   }
 
-  updateAnime(updatedAnime: Anime) {
-    console.log(this.animeList);
-    const id = updatedAnime.id;
-    const index = this.animeList.findIndex((ani) => ani.id === id);
-    this.animeList.splice(index, 1, updatedAnime);
+  // updateAnime(updatedAnime: Anime) {
+  //   console.log(this.animeList);
+  //   const id = updatedAnime.id;
+  //   const index = this.animeList.findIndex((ani) => ani.id === id);
+  //   this.animeList.splice(index, 1, updatedAnime);
     
-  }
+  // }
 }

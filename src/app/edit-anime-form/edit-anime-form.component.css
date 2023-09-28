@@ -5,6 +5,8 @@
     max-width: 20rem;
     margin: 0 auto;
     margin-bottom: 1rem;
+    padding-top: 28px;
+
   }
   
   .mat-mdc-radio-button ~ .mat-mdc-radio-button {

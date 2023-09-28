@@ -44,7 +44,7 @@ export class AnimeComponent {
 
   gotoAnimeDetail() {
 
-    this.router.navigate([`/animes`, this.anime.id]);
+    this.router.navigate([`/animes/info/`, this.anime.id]);
   }
 
 
