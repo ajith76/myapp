@@ -57,7 +57,7 @@ export class AnimeComponent {
     this.animeService.deleteAnimeById(this.anime.id).subscribe(() => {
       console.log('anime deleted successfully');
       this.removeAnime.emit();
-      this.router.navigate(['/animes']);
+      // this.router.navigate(['/animes']);
     });
 
   }

@@ -32,7 +32,7 @@ export class EditAnimeFormComponent {
     dislike: 0,
     title: ['', [Validators.required, Validators.minLength(5)]],
     rating: [0, [Validators.required, Validators.min(1), Validators.max(10)]],
-    releaseYear: ['', [Validators.required]],
+    // releaseYear: ['', [Validators.required]],
     censorRating: ['', [Validators.required]],
     genres: [[], [Validators.required]],
     languages: [[], [Validators.required]],
@@ -106,8 +106,6 @@ export class EditAnimeFormComponent {
     if (this.animeForm.valid) {
       const updatedAnime = this.animeForm.value;
       console.log(updatedAnime);
-      // this.movieService.updateMovie(updatedMovie as Movie);
-
       this.animeService.updateAnimeById(updatedAnime as unknown as Anime).subscribe(() => {
         this.router.navigate(['/animes']);
       });
