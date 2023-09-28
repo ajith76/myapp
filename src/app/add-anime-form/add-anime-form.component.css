@@ -18,6 +18,8 @@
     background-image: url("https://images3.alphacoders.com/282/282067.jpg");
     background-size: cover;
     width: 100%;  
+    display: flex;
+    flex-wrap: wrap;
    
   }
  
