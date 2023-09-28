@@ -14,7 +14,7 @@ export class AnimeComponent {
   @Output() removeAnime = new EventEmitter();
   likeSubject = new Subject<number>();
   disLikeSubject = new Subject<number>();
-  show = true;
+  show = false;
   constructor(private router: Router, private animeService: AnimeService) {
 
     this.likeSubject
@@ -57,6 +57,7 @@ export class AnimeComponent {
     this.animeService.deleteAnimeById(this.anime.id).subscribe(() => {
       console.log('anime deleted successfully');
       this.removeAnime.emit();
+      this.router.navigate(['/animes']);
     });
 
   }

@@ -29,6 +29,8 @@ img:hover{
 }
 
   .anime-spec > p {
+    display: flex;
+    justify-content: space-between;
     font-size: 22px;
     font-weight: bold;
   }
