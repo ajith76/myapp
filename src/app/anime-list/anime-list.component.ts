@@ -28,7 +28,7 @@ export class AnimeListComponent {
   get search() {
     return this.searchForm.get('search');
   }
-  
+ 
   constructor(private animeService: AnimeService,private fb: FormBuilder){}
   
   ngOnInit(){
@@ -38,8 +38,8 @@ export class AnimeListComponent {
       distinctUntilChanged(),
       switchMap((name) => this.animeService.searchAnimeList(name || ''))
     )
-    .subscribe((mvList) => {
-      this.animeList = mvList;
+    .subscribe((aniList) => {
+      this.animeList = aniList;
     });
     this.loadAnimesData();
   }
@@ -53,4 +53,9 @@ export class AnimeListComponent {
   ngOnDestroy(){
     this.getAnimeList.unsubscribe();
   }
+  
+  
 }
+// export class FormFieldPrefixSuffixExample {
+//   hide = true;
+// }

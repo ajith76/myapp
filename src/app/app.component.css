@@ -1,6 +1,8 @@
 .anime-list-container {
     display: grid;
     place-content: center;
+    /* padding: 20px; */
+    /* position: relative; */
   }
   
   /* .router-container {
@@ -9,4 +11,12 @@
   
   nav button {
     text-transform: uppercase;
+    
   }
+.mat-toolbar{
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  z-index: 2;
+  
+}

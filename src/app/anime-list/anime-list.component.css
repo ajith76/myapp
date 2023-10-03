@@ -1,7 +1,22 @@
 .anime-list-container{
+
     display: flex;
-    margin-top: 35px;
+    /* margin-top: 35px; */
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
+    /* position: relative; */
+    margin-top: 30px;
+}
+.searchBar{
+    height: 50px;
+    width: 300px;
+    border-radius: 30px;
+    margin-top: 100px;
+}
+.search-form{
+    display: flex;
+    justify-content: center;
+   
+    
 }

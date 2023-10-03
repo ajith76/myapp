@@ -30,6 +30,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatListModule} from '@angular/material/list';
 import {MatSelectModule} from '@angular/material/select';
 import {MatBadgeModule} from '@angular/material/badge';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 
@@ -45,7 +46,8 @@ import {MatBadgeModule} from '@angular/material/badge';
     LikeDislikeCounterComponent,
     EditAnimeFormComponent,
     AnimeDetailComponent,
-    HomePageComponent
+    HomePageComponent,
+    NotFoundComponent
     
   ],
   imports: [
