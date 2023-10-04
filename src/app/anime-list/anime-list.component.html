@@ -4,8 +4,8 @@
       formControlName="search"
       class="searchBar"
       type="search"
-      name="search_book"
-      placeholder="Search Books"
+      name="search_anime"
+      placeholder="Search Animes"
       list="search_list"
     />
     <datalist
@@ -19,9 +19,7 @@
         class="option"
         *ngFor="let ani of animeList"
         value="{{ ani.title }}"
-      >
-        <!-- {{ mv.title }} -->
-      </option>
+      ></option>
     </datalist>
   </form>
 </div>
