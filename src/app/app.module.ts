@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { FormArray, FormBuilder, Validators } from '@angular/forms';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
-import { MatFormFieldModule, MatHint } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import {
- MatChipEditedEvent ,
-  MatChipInputEvent,
-  MatChipsModule,
+ MatChipsModule,
 } from '@angular/material/chips';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -30,7 +27,10 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatListModule} from '@angular/material/list';
 import {MatSelectModule} from '@angular/material/select';
 import {MatBadgeModule} from '@angular/material/badge';
+import {MatDialog, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
+
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ConfirmDialogueBoxComponent } from './confirm-dialogue-box/confirm-dialogue-box.component';
 
 
 
@@ -47,7 +47,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
     EditAnimeFormComponent,
     AnimeDetailComponent,
     HomePageComponent,
-    NotFoundComponent
+    ConfirmDialogueBoxComponent,
+    NotFoundComponent,
+    
+    
     
   ],
   imports: [
@@ -56,7 +59,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HttpClientModule,
     RouterModule,MatIconModule,MatFormFieldModule,MatButtonModule,FormsModule, ReactiveFormsModule,
     MatInputModule,BrowserAnimationsModule,MatToolbarModule,MatFormFieldModule,MatRadioModule,
-    MatDatepickerModule,MatListModule,MatSelectModule,MatChipsModule,MatBadgeModule
+    MatDatepickerModule,MatListModule,MatSelectModule,MatChipsModule,MatBadgeModule,MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

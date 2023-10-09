@@ -52,9 +52,9 @@ getAnimeListFromMockAPI(){
     );
   }
 
-  setAnimeList(newAnime: Anime) {
-    this.animeList.push(newAnime);
-  }
+  // setAnimeList(newAnime: Anime) {
+  //   this.animeList.push(newAnime);
+  // }
 
   // updateAnime(updatedAnime: Anime) {
   //   console.log(this.animeList);

@@ -4,6 +4,7 @@ import { Route, Router } from '@angular/router';
 import { debounceTime, Subject, switchMap } from 'rxjs';
 import { Anime } from '../app.component';
 
+
 @Component({
   selector: 'app-anime',
   templateUrl: './anime.component.html',
@@ -54,16 +55,15 @@ export class AnimeComponent {
 
 
   deleteAnime() {
+    if(confirm("Are you sure"))
     this.animeService.deleteAnimeById(this.anime.id).subscribe(() => {
       console.log('anime deleted successfully');
       this.removeAnime.emit();
-      // this.router.navigate(['/animes']);
     });
 
   }
 
   likeCount(count: number) {
-  
     this.likeSubject.next(count);
   }
 
