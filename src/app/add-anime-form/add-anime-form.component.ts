@@ -24,7 +24,7 @@ export class AddAnimeFormComponent {
   genres = GENRES;
 
   animeForm = this.fb.group({
-    like: 0,
+    like: 0, 
     dislike: 0,
     title: ['', [Validators.required, Validators.minLength(5)]],
     rating: [0, [Validators.required, Validators.min(1), Validators.max(10)]],

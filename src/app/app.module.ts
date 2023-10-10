@@ -31,6 +31,7 @@ import {MatDialog, MatDialogRef, MatDialogModule} from '@angular/material/dialog
 
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ConfirmDialogueBoxComponent } from './confirm-dialogue-box/confirm-dialogue-box.component';
+import { SearchComponentComponent } from './search-component/search-component.component';
 
 
 
@@ -49,6 +50,7 @@ import { ConfirmDialogueBoxComponent } from './confirm-dialogue-box/confirm-dial
     HomePageComponent,
     ConfirmDialogueBoxComponent,
     NotFoundComponent,
+    SearchComponentComponent,
     
     
     

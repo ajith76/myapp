@@ -15,7 +15,7 @@
     margin-left: 16px;
   }
   .class{
-    background-image: url("https://images4.alphacoders.com/640/640956.jpg");
+    /* background-image: url("https://images4.alphacoders.com/640/640956.jpg"); */
     object-fit: cover;
     width: 100%;
 

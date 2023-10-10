@@ -1,5 +1,10 @@
 <div class="anime-container">
-  <img [src]="anime.poster" [alt]="anime.title" class="anime-poster" />
+  <img
+    [src]="anime.poster"
+    [alt]="anime.title"
+    class="anime-poster"
+    (click)="gotoAnimeDetail()"
+  />
 
   <div class="anime-details">
     <div class="anime-spec">
