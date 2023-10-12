@@ -1,8 +1,8 @@
 import { Component,Input,Output,EventEmitter  } from '@angular/core';
-import { AnimeService } from '../anime.service';
+import { AnimeService } from '../../anime.service';
 import { Route, Router } from '@angular/router';
 import { debounceTime, Subject, switchMap } from 'rxjs';
-import { Anime } from '../app.component';
+import { Anime } from '../../app.component';
 
 
 @Component({
@@ -45,7 +45,7 @@ export class AnimeComponent {
 
   gotoAnimeDetail() {
 
-    this.router.navigate([`/animes/info/`, this.anime.id]);
+    this.router.navigate([`/animes/`, this.anime.id]);
   }
 
 

@@ -1,22 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AnimeComponent } from './anime/anime.component';
+import { AnimeComponent } from './animes/anime/anime.component';
 import { AppComponent } from './app.component';
-import { AnimeListComponent } from './anime-list/anime-list.component';
-import { AddAnimeFormComponent } from './add-anime-form/add-anime-form.component';
+import { AnimeListComponent } from './animes/anime-list/anime-list.component';
+import { AddAnimeFormComponent } from './animes/add-anime-form/add-anime-form.component';
 import { HomePageComponent } from './home-page/home-page.component';
-import { EditAnimeFormComponent } from './edit-anime-form/edit-anime-form.component';
-import { AnimeDetailComponent } from './anime-detail/anime-detail.component';
+import { EditAnimeFormComponent } from './animes/edit-anime-form/edit-anime-form.component';
+import { AnimeDetailComponent } from './animes/anime-detail/anime-detail.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 
 
-const routes: Routes = [{path:"animes", component:AnimeListComponent },
-{path:"animes/add", component:AddAnimeFormComponent},
-{path:"", component:HomePageComponent},
-{path:"animes/edit/:id", component:EditAnimeFormComponent},
-{path:"animes/info/:id", component:AnimeDetailComponent},
-{ path: '**', component: NotFoundComponent },
+const routes: Routes = [ { path: '', redirectTo: '/home', pathMatch: 'full' },
+{ path: 'home', component: HomePageComponent },
 
+{
+  path: 'animes',
+  loadChildren: () =>
+    import('./animes/animes.module').then((m) => m.AnimesModule),
+  
+},
+{ path: '**', component: NotFoundComponent },
 
 
 

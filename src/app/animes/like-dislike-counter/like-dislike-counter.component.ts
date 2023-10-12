@@ -1,5 +1,5 @@
 import { Component,EventEmitter, Input, Output } from '@angular/core'
-import { AnimeService } from '../anime.service';
+import { AnimeService } from '../../anime.service';
 
 
 @Component({

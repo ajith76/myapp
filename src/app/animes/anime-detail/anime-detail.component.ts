@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AnimeService } from '../anime.service';
+import { AnimeService } from '../../anime.service';
 import { ActivatedRoute } from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { GENRES, LANGUAGES } from '../add-anime-form/global';
@@ -34,7 +34,7 @@ export class AnimeDetailComponent {
   }
 
   getLabelLanguages(anime: any) {
-    return this.anime.languages?.map(
+    return anime.languages?.map(
       (lang: string) => LANGUAGES.find((data) => data.value === lang)?.label
     );
   }
