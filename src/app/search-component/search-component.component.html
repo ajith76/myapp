@@ -1,1 +1,25 @@
-<p>search-component works!</p>
+<div class="search">
+  <form [formGroup]="searchForm" class="search-form">
+    <input
+      formControlName="search"
+      class="searchBar"
+      type="search"
+      name="search_anime"
+      placeholder="Search Animes"
+      list="search_list"
+    />
+    <datalist
+      id="search_list"
+      *ngIf="
+        searchForm.get('search')?.value !== null &&
+        searchForm.get('search')?.value !== ''
+      "
+    >
+      <option
+        class="option"
+        *ngFor="let ani of animeList"
+        value="{{ ani.title }}"
+      ></option>
+    </datalist>
+  </form>
+</div>

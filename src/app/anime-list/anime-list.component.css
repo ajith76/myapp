@@ -4,24 +4,6 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    margin-top: 73px;
+    margin-top: 40px;
   
-}
-.searchBar{
-    align-items: center;
-    height: 50px;
-    margin: 0 auto;
-    width: 300px;
-    border-radius: 17px;
-    margin-top: 45px;
-    border-color: #6177f7;
-    padding-left: 13px;
-    
-}
-.search-form{
-    display: flex;
-    justify-content: center; 
-}
-input{
-
 }

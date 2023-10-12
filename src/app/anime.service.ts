@@ -2,15 +2,21 @@ import { Injectable } from '@angular/core';
 import { Anime } from './app.component';
 import { HttpClient } from '@angular/common/http';
 import { Title } from '@angular/platform-browser';
+import { BehaviorSubject } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnimeService {
-  animeList : Array<Anime> = [];
+  // animeList : Array<Anime> = [];
+  private animeList = new BehaviorSubject("");
+  currentAnimeList  = this.animeList.asObservable();
 
   constructor(private http: HttpClient) { }
+  changeAnimeList(animeList : any){
+    this.animeList.next(animeList)
+  }
 
 
 getAnimeList(){

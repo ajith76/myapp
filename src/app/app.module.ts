@@ -31,7 +31,7 @@ import {MatDialog, MatDialogRef, MatDialogModule} from '@angular/material/dialog
 
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ConfirmDialogueBoxComponent } from './confirm-dialogue-box/confirm-dialogue-box.component';
-import { SearchComponentComponent } from './search-component/search-component.component';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -50,7 +50,7 @@ import { SearchComponentComponent } from './search-component/search-component.co
     HomePageComponent,
     ConfirmDialogueBoxComponent,
     NotFoundComponent,
-    SearchComponentComponent,
+    
     
     
     
@@ -61,7 +61,7 @@ import { SearchComponentComponent } from './search-component/search-component.co
     HttpClientModule,
     RouterModule,MatIconModule,MatFormFieldModule,MatButtonModule,FormsModule, ReactiveFormsModule,
     MatInputModule,BrowserAnimationsModule,MatToolbarModule,MatFormFieldModule,MatRadioModule,
-    MatDatepickerModule,MatListModule,MatSelectModule,MatChipsModule,MatBadgeModule,MatDialogModule
+    MatDatepickerModule,MatListModule,MatSelectModule,MatChipsModule,MatBadgeModule,MatDialogModule,SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

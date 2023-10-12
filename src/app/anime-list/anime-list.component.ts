@@ -32,21 +32,18 @@ export class AnimeListComponent {
   constructor(private animeService: AnimeService,private fb: FormBuilder){}
   
   ngOnInit(){
-    this.search?.valueChanges
-    .pipe(
-      debounceTime(1500),
-      distinctUntilChanged(),
-      switchMap((name) => this.animeService.searchAnimeList(name || ''))
-    )
-    .subscribe((aniList) => {
-      this.animeList = aniList;
-    });
+    this.getanime();
     this.loadAnimesData();
+  }
+  getanime(){
+    this.getAnimeList = this.animeService.getAnimeListFromMockAPI().subscribe((animeList : any)=>{
+    this.animeList = animeList;
+    })
   }
   loadAnimesData(){
     this.getAnimeList = this.animeService
-    .getAnimeListFromMockAPI()
-    .subscribe((aniList) => {
+    .currentAnimeList
+    .subscribe((aniList : any) => {
       this.animeList = aniList;
     });
   }
@@ -56,6 +53,4 @@ export class AnimeListComponent {
   
   
 }
-// export class FormFieldPrefixSuffixExample {
-//   hide = true;
-// }
+
